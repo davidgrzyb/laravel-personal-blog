@@ -63,12 +63,12 @@ ul {
 }
 
 .social {
-    color: #6c757d;
+    opacity: 0.6;
     font-size: 28px;
 }
 
 .social:hover {
-    color: grey;
+    opacity: 0.8;
     font-size: 28px;
 }
 

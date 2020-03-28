@@ -3,22 +3,22 @@
     <ul>
         <li>
             <a target="_blank" rel="noreferrer" href="https://angel.co/davidgrzyb">
-                <i class="fab fa-angellist social"></i>
+                <img src="{{ getAsset('storage/angellist-icon.png') }}" class="social">
             </a>
         </li>
         <li>
             <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/david-grzyb/">
-                <i class="fab fa-linkedin-in social"></i>
+                <img src="{{ getAsset('storage/linkedin-icon.png') }}" class="social">
             </a>
         </li>
         <li>
             <a target="_blank" rel="noreferrer" href="https://instagram.com/dgrzyb">
-                <i class="fab fa-instagram social"></i>
+                <img src="{{ getAsset('storage/instagram-icon.png') }}" class="social">
             </a>
         </li>
         <li>
             <a target="_blank" rel="noreferrer" href="https://github.com/davidgrzyb">
-                <i class="fab fa-github social"></i>
+                <img src="{{ getAsset('storage/github-icon.png') }}" class="social">
             </a>
         </li>
     </ul>
