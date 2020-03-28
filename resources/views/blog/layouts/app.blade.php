@@ -15,7 +15,7 @@
         <meta name="description" content="@yield('description')">
     @endif
 
-    <link rel="icon" href="{{ asset('storage/david-grzyb-animoji-favicon.png') }}">
+    <link rel="icon" href="{{ getAsset('storage/david-grzyb-animoji-favicon.png') }}">
 
     <!-- Style sheets -->
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
