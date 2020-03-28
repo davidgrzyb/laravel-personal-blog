@@ -57,7 +57,6 @@
                 @endif
             </div>
         </div>
-        <br /><br />
 
         <div id="disqus_thread"></div>
                             

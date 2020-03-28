@@ -1,7 +1,7 @@
 @extends('blog.layouts.app')
 
-@section('title', sprintf('%s — %s', config('app.name'), 'Software Engineer in Toronto, Canada'))
-@section('description', 'Software Engineer living in Toronto Canada. Love programming, Laravel, my dog and driving fast!')
+@section('title', config('blog.meta.title'))
+@section('description', config('blog.meta.description'))
 
 @section('content')
     <div class="container col-md-6">
@@ -54,7 +54,7 @@
         </div>
 
         <footer>
-            <p>I'm a Backend Developer currently living in Ontario, Canada.</p>
+            <p>{{ config('blog.taglines.footer') }}</p>
             <ul>
                 <li>
                     <a target="_blank" rel="noreferrer" href="https://angel.co/davidgrzyb">

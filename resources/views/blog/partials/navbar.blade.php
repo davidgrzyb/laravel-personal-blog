@@ -5,7 +5,7 @@
                 <div style="background-image: url({{ getAsset('storage/david-grzyb-animoji.jpg') }});border:8px solid #D8DEE9;" class="blog-avatar"></div>
             </a>
             <a id="brand" class="text-decoration-none font-weight-bolder" href="{{ route('blog.index') }}">{{ config('app.name', __('canvas::blog.title')) }}</a>
-            <p class="blog-tagline pt-4">Laravel Developer in Ontario, Canada 🇨🇦</p>
+            <p class="blog-tagline pt-4">{{ config('blog.taglines.header') }}</p>
         </div>
     </div>
 </header>
