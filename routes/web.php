@@ -13,10 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Auth::routes(['register' => false]);
 
-Auth::routes();
+Route::get('/', 'BlogController@getPosts')->name('blog.index');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('{slug}', 'BlogController@findPostBySlug')->name('blog.post');
+
+// Route::get('tag/{slug}', 'BlogController@getPostsByTag')->name('blog.tag');
+// Route::get('topic/{slug}', 'BlogController@getPostsByTopic')->name('blog.topic');
