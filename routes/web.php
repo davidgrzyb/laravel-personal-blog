@@ -1,5 +1,6 @@
 <?php
 
+use Canvas\Post;
 use Illuminate\Support\Facades\Route;
 
 /*

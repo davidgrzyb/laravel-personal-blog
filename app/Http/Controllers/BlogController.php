@@ -18,7 +18,9 @@ class BlogController extends Controller
     public function getPosts() : View
     {
         $data = [
-            'posts'  => Post::published()->orderByDesc('published_at')->simplePaginate(10),
+            'posts'  => Post::published()->whereDoesntHave('tags', function ($query) {
+                return $query->where('name', 'hidden');
+            })->orderByDesc('published_at')->simplePaginate(10),
             'topics' => Topic::all(['name', 'slug'])->sortBy('name'),
             'tags'   => Tag::all(['name', 'slug']),
         ];

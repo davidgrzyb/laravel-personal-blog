@@ -46,45 +46,12 @@
                 @endisset
 
                 <div class="content-body serif mt-4">{!! $data['post']->body !!}</div>
-
-                @if($data['post']->tags->count() > 0)
-                    <h5>
-                        @foreach($data['post']->tags as $tag)
-                            <span><a href="{{ route('blog.tag', $tag->slug) }}"
-                                     class="badge badge-light p-2 tag">{{ $tag->name }}</a></span>
-                        @endforeach
-                    </h5>
-                @endif
             </div>
         </div>
 
         <div id="disqus_thread"></div>
                             
-        <footer class="mt-5">
-            <p>I'm a Software Engineer currently living in Toronto, Canada.</p>
-            <ul>
-                <li>
-                    <a target="_blank" rel="noreferrer" href="https://angel.co/davidgrzyb">
-                        <i class="fab fa-angellist social"></i>
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/david-grzyb/">
-                        <i class="fab fa-linkedin-in social"></i>
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" rel="noreferrer" href="https://instagram.com/dgrzyb">
-                        <i class="fab fa-instagram social"></i>
-                    </a>
-                </li>
-                <li>
-                    <a target="_blank" rel="noreferrer" href="https://github.com/davidgrzyb">
-                        <i class="fab fa-github social"></i>
-                    </a>
-                </li>
-            </ul>
-        </footer>
+        @include('blog.partials.footer')
     </div>
 @endsection
 

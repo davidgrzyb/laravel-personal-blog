@@ -11,16 +11,14 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-   .scripts([
+mix.scripts([
       'public/js/jquery.min.js',
-      'public/js/popper.min.js',
-      'public/js/bootstrap.min.js',
-      'public/js/all.min.js',
+      // 'public/js/popper.min.js',
+      // 'public/js/bootstrap.min.js',
    ], 'public/js/scripts.js')
    .styles([
       'public/css/style.css',
       'public/css/rubik.css',
-      'public/css/bootstrap.css',
+      // 'public/css/bootstrap.css',
       'public/css/custom.css',
    ], 'public/css/app.css');
