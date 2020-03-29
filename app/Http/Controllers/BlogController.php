@@ -21,8 +21,8 @@ class BlogController extends Controller
             'posts'  => Post::published()->whereDoesntHave('tags', function ($query) {
                 return $query->where('name', 'hidden');
             })->orderByDesc('published_at')->simplePaginate(10),
-            'topics' => Topic::all(['name', 'slug'])->sortBy('name'),
-            'tags'   => Tag::all(['name', 'slug']),
+            // 'topics' => Topic::all(['name', 'slug'])->sortBy('name'),
+            // 'tags'   => Tag::all(['name', 'slug']),
         ];
 
         return view('blog.index')->withData($data);
@@ -74,7 +74,6 @@ class BlogController extends Controller
                 'topic'  => $post->topic->first() ?? null,
                 'topics' => Topic::all(['name', 'slug'])->sortBy('name'),
             ];
-            // dd($data);
 
             event(new PostViewed($post));
 
