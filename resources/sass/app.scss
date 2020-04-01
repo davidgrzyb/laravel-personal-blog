@@ -1,8 +1,77 @@
+// Tailwind
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Custom CSS
+.ql-align-justify {
+    padding-top: 20px;
+}
+
+body > div > main > div > div > h2 {
+    font-size: 2rem;
+    font-family: inherit;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+body > div > main > div > div > h3 {
+    font-size: 1.6rem;
+    font-family: inherit;
+    font-weight: 500;
+    margin-top: 10px;
+}
+
+body > div > main > div > div > pre {
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+    background-color: rgba(77, 87, 106, 0.1);
+    padding-top: 20px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 10px 30px 20px 20px;
+    max-width: 100%;
+}
+
+body > div > main > div > div > blockquote {
+    background-color: rgba(77, 87, 106, 0.1);
+    margin-top: 25px;
+    padding: 10px 30px 20px 20px;
+    font-style: italic;
+    font-size: 1em;
+}
+
+body > div > main > div > div > p > a {
+    text-decoration: underline;
+}
+
+body > div > main > div > div > p > a:hover {
+    color: #4c566a;
+}
+
+body > div > main > div > div > div.ql-embed-content {
+    padding-top: 20px;
+}
+
+body > div > main > div > div > div.embedded_image {
+    padding-top: 30px;
+}
+
+body > div > main > div > div > div.embedded_image > p {
+    padding-top: 15px;
+    text-align: center;
+
+}
+
+body > div > main > div > div > hr {
+    margin-top: 50px;
+    padding-bottom: 25px;
+}
+
+body > div > main > div > div > div > img {
+    display: block;
+    margin: 0 auto;
+}
+
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
-
-// Variables
-@import 'variables';
-
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css?family=Rubik:400,500&display=swap');
