@@ -21,12 +21,11 @@
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
+    <div class="h-screen">
         @yield('content')
     </div>
 
     <!-- Scripts -->
-    <script src="{{ mix('js/scripts.js') }}"></script>
     @stack('scripts')
 
     @guest

@@ -17,41 +17,46 @@
 @endpush
 
 @section('content')
-    <div class="container col-md-6">
-        @include('blog.partials.navbar')
-
-        @if($data['topics']->isNotEmpty())
-            <div class="nav-scroller py-1 border-bottom">
-                <nav class="nav d-flex justify-content-between">
-                    @foreach($data['topics'] as $topic)
-                        <a class="p-2 nav-item" href="{{ route('blog.topic', $topic->slug) }}">{{ $topic->name }}</a>
-                    @endforeach
-                </nav>
-            </div>
-        @endif
-
-        <div class="row justify-content-md-center">
-            <div class="col col">
-                <h1 class="content-title pt-5 mb-2 @unless($data['post']->summary) mb-4 @endif">{{ $data['post']->title }}</h1>
-                <span class="text-muted">{{ \Carbon\Carbon::parse($data['post']->published_at)->format('M d, Y') }} — {{ $data['post']->read_time }}</span>
-                <div class="pb-3"></div>
-
-                @isset($data['post']->featured_image)
-                    <img src="{{ $data['post']->featured_image }}" class="w-100 pt-4"
-                         @isset($data['post']->featured_image_caption) alt="{{ $data['post']->featured_image_caption }}"
-                         title="{{ $data['post']->featured_image_caption }}" @endisset>
-                    @isset($data['post']->featured_image_caption)
-                        <p class="text-muted text-center pt-3" style="font-size: 0.9rem">{!! $data['post']->featured_image_caption !!}</p>
-                    @endisset
-                @endisset
-
-                <div class="content-body serif mt-4">{!! $data['post']->body !!}</div>
+        <div class="flex justify-center">
+            <div class="md:w-3/5">
+                @include('blog.partials.navbar')
             </div>
         </div>
 
-        <div id="disqus_thread"></div>
+        <main role="main" class="flex justify-center pl-8 pr-8">
+            <div class="md:w-3/5 border-gray border-t pb-8">
+                <h1 class="text-post-title-link-gray font-rubik text-3xl font-medium pt-12 pb-2">
+                    {{ $data['post']->title }}
+                </h1>
+                <span class="text-sub-header-gray font-rubik text-base">
+                    {{ \Carbon\Carbon::parse($data['post']->published_at)->format('M d, Y') }} — {{ $data['post']->read_time }}
+                </span>
+
+                @isset($data['post']->featured_image)
+                    <img src="{{ $data['post']->featured_image }}" class="rounded-lg pt-12"
+                         @isset($data['post']->featured_image_caption) alt="{{ $data['post']->featured_image_caption }}"
+                         title="{{ $data['post']->featured_image_caption }}" @endisset>
+                    @isset($data['post']->featured_image_caption)
+                        <p class="text-sub-header-gray font-rubik text-base text-center pt-6">{!! $data['post']->featured_image_caption !!}</p>
+                    @endisset
+                @endisset
+
+                <div class="text-post-content-gray font-rubik text-base leading-loose pt-6">{!! $data['post']->body !!}</div>
+                
+            </div>
+        </main>
+
+        <div class="flex justify-center pl-10 pr-10">
+            <div class="w-full md:w-3/5 pt-3 pb-1">
+                <div id="disqus_thread"></div>
+            </div>
+        </div>
                             
-        @include('blog.partials.footer')
+        <div class="flex justify-center pl-10 pr-10">
+            <div class="md:w-3/5 border-gray border-t pt-6 pb-4">
+                @include('blog.partials.footer')
+            </div>
+        </div>
     </div>
 @endsection
 
