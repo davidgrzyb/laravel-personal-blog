@@ -60,7 +60,10 @@ body > div > main > div > div > div.embedded_image {
 body > div > main > div > div > div.embedded_image > p {
     padding-top: 15px;
     text-align: center;
+}
 
+body > div > main > div > div > div.ql-embed-content {
+    max-width: 82vw;
 }
 
 body > div > main > div > div > hr {
