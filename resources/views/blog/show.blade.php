@@ -24,7 +24,7 @@
         </div>
 
         <main role="main" class="flex justify-center pl-8 pr-8">
-            <div class="md:w-3/5 border-gray border-t pb-8">
+            <div class="w-full md:w-3/5 border-gray border-t pb-8">
                 <h1 class="text-post-title-link-gray font-rubik text-3xl font-medium pt-12 pb-2">
                     {{ $data['post']->title }}
                 </h1>
