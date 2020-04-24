@@ -20,9 +20,9 @@ mix.js('resources/js/app.js', 'public/js')
       postCss: [
          tailwindcss('./tailwind.config.js')
       ],
-   }).purgeCss({
+   })
+   .purgeCss({
       enabled: mix.inProduction(),
-      folders: ['src', 'templates'],
-      extensions: ['html', 'js', 'php', 'vue'],
-      whitelist: ['flex', 'flex-col', 'md:flex-row', 'items-center', 'justify-center', 'px-4', 'py-1', 'text-white', 'bg-gray-900', 'rounded', 'mr-0', 'md:mr-2', 'shadow', 'hover:bg-gray-700', 'bg-blue-600', 'rounded', 'shadow', 'hover:bg-blue-500', 'mt-2', 'md:mt-0']
+      extensions: ['html', 'js', 'php', 'vue', 'scss'],
+      whitelist: ['flex', 'flex-col', 'md:flex-row', 'items-center', 'justify-center'],
    });

@@ -1,78 +1,111 @@
 // Tailwind
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* purgecss start ignore */
+@tailwind  base;
+@tailwind  components;
+/* purgecss end ignore */
+@tailwind  utilities;
 
-// Custom CSS
-.ql-align-justify {
-    padding-top: 20px;
+// Custom Styles
+
+/* purgecss start ignore */
+body > div > main > div > div > p {
+    @apply py-4;
 }
 
 body > div > main > div > div > h2 {
-    font-size: 2rem;
+    @apply text-3xl;
+    @apply py-3;
     font-family: inherit;
-    font-weight: 500;
-    margin-top: 10px;
+    color: #4c566a;
 }
 
 body > div > main > div > div > h3 {
-    font-size: 1.6rem;
+    @apply text-2xl;
+    @apply py-3;
     font-family: inherit;
-    font-weight: 500;
-    margin-top: 10px;
-}
-
-body > div > main > div > div > pre {
-    white-space: pre-wrap;
-    overflow-wrap: break-word;
-    background-color: rgba(77, 87, 106, 0.1);
-    padding-top: 20px;
-    margin-top: 25px;
-    margin-bottom: 25px;
-    padding: 10px 30px 20px 20px;
-    max-width: 100%;
-}
-
-body > div > main > div > div > blockquote {
-    background-color: rgba(77, 87, 106, 0.1);
-    margin-top: 25px;
-    padding: 10px 30px 20px 20px;
-    font-style: italic;
-    font-size: 1em;
-}
-
-body > div > main > div > div > p > a {
-    text-decoration: underline;
-}
-
-body > div > main > div > div > p > a:hover {
     color: #4c566a;
 }
 
 body > div > main > div > div > div.ql-embed-content {
-    max-width: 82vw;
-    padding-top: 20px;
+    @apply my-6;
 }
 
-body > div > main > div > div > div.embedded_image {
-    padding-top: 30px;
+body > div > main > div > div > pre {
+    @apply my-3;
+    @apply overflow-x-auto;
+    @apply p-2;
+    @apply bg-gray-100;
+    @apply rounded-lg;
+    @apply shadow;
 }
 
-body > div > main > div > div > div.embedded_image > p {
-    padding-top: 15px;
-    text-align: center;
-
+body > div > main > div > div > p > a {
+    @apply underline;
+    color: rgb(3, 102, 214);
 }
 
-body > div > main > div > div > hr {
-    margin-top: 50px;
-    padding-bottom: 25px;
+body > div > main > div > div > p > strong {
+    @apply font-medium;
 }
 
-body > div > main > div > div > div > img {
-    display: block;
-    margin: 0 auto;
+body > div > main > div > div > blockquote {
+    @apply border-l-4;
+    @apply pl-4;
+    @apply py-1;
+    @apply my-3;
 }
+
+body > div > main > div > div > div.embedded_image > img {
+    @apply py-6;
+}
+
+body > div > main > div > div > ul {
+    @apply py-4;
+    @apply pl-5;
+    @apply list-disc;
+}
+
+body > div > main > div > div > blockquote > a {
+    @apply underline;
+}
+
+// Custom buttons
+
+.black-btn {
+    @apply px-4;
+    @apply py-1;
+    @apply bg-gray-900;
+    @apply rounded;
+    @apply mr-0;
+    @apply shadow;
+
+    @screen md {
+        @apply mr-2;
+    }
+}
+
+.blue-btn {
+    @apply px-4;
+    @apply py-1;
+    @apply bg-blue-600;
+    @apply rounded;
+    @apply mt-2;
+    @apply shadow;
+
+    @screen md {
+        @apply mt-0;
+    }
+}
+
+.black-btn:hover {
+    @apply bg-gray-700;
+}
+
+.blue-btn:hover {
+    @apply bg-blue-500;
+}
+
+// Fonts
 
 /* rubik-regular - latin */
 @font-face {
@@ -80,15 +113,18 @@ body > div > main > div > div > div > img {
     font-style: normal;
     font-weight: 400;
     src: local('Rubik'), local('Rubik-Regular'),
-         url('../fonts/rubik-v9-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-         url('../fonts/rubik-v9-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }
-  /* rubik-700 - latin */
-  @font-face {
+        url('../fonts/rubik-v9-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../fonts/rubik-v9-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+    }
+
+/* rubik-500 - latin */
+@font-face {
     font-family: 'Rubik';
     font-style: normal;
-    font-weight: 700;
-    src: local('Rubik Bold'), local('Rubik-Bold'),
-         url('../fonts/rubik-v9-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-         url('../fonts/rubik-v9-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-  }
+    font-weight: 500;
+    src: local('Rubik Medium'), local('Rubik-Medium'),
+        url('../fonts/rubik-v9-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+        url('../fonts/rubik-v9-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* purgecss end ignore */

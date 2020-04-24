@@ -30,14 +30,14 @@
 
     @guest
         <!-- Global site tag (gtag.js) - Google Analytics -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41723698-6"></script>
+        <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=UA-41723698-6"></script>
         <script>
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
             gtag('config', 'UA-41723698-6');
-        </script>
+        </script> -->
     @endguest
 </body>
 </html>
