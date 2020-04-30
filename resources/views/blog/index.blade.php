@@ -15,7 +15,7 @@
             @foreach($data['posts'] as $post)
                 <div class="pt-12">
                     <div>
-                        <h2 class="text-post-title-link-gray font-rubik text-3xl">
+                        <h2 class="text-post-title-link-gray font-rubik text-2xl md:text-3xl">
                             <a href="{{ route('blog.post', $post->slug) }}" class="">{{ $post->title }}</a>
                         </h2>
                     </div>
