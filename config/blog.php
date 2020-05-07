@@ -7,8 +7,8 @@ return [
     ],
 
     'meta' => [
-        'title' => 'David Grzyb — Software Engineer in Toronto, Canada',
-        'description' => 'Software Engineer living in Toronto Canada. Love programming, Laravel, my dog and driving fast!',
+        'title' => 'David Grzyb — Web Development Personal Blog',
+        'description' => 'David Grzyb is a web developer with experience using PHP and JavaScript in Hamilton, Ontario.',
     ],
 
     'cdn' => [
