@@ -20,11 +20,16 @@
                         </h2>
                     </div>
                     <div class="pt-2">
-                        <p class="text-post-date-gray font-rubik text-sm">{{ Carbon\Carbon::parse($post->published_at)->format('M d') }} — {{ getReadTime($post->body) }}</p>
+                        <p class="text-post-date-gray font-rubik text-sm">
+                            {{ Carbon\Carbon::parse($post->published_at)->format('M d') }} — {{ getReadTime($post->body) }}
+                            @if($post->pinned)
+                                | Pinned
+                            @endif
+                        </p>
                     </div>
                     <div class="pt-4">
                         <p class="text-post-summary-gray font-rubik text-base">
-                            <a href="{{ route('blog.post', $post->slug) }}" class="">{{ $post->summary }}</a>
+                            <a href="{{ route('blog.post', $post->slug) }}" class="">{{ $post->summary }}</a> 
                         </p>
                     </div>
                 </div>

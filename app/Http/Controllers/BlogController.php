@@ -40,10 +40,7 @@ class BlogController extends Controller
             ->whereRaw('canvas_tags.name != "hidden"')
             ->orWhereRaw('canvas_tags.name IS NULL')
             ->orderByRaw('canvas_tags.name = "pinned" DESC, canvas_posts.published_at DESC')
-            ->get();
-            // ->simplePaginate(6);
-
-        dd($posts);
+            ->simplePaginate(6);
 
         $data = [
             'posts' => $posts,
