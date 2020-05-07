@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use DB;
 use Canvas\Tag;
 use Canvas\Post;
 use Canvas\Topic;
@@ -17,12 +18,37 @@ class BlogController extends Controller
      */
     public function getPosts() : View
     {
+        // Temporary fix while waiting for pinned posts feature in Canvas.
+        // URL: https://github.com/cnvs/canvas/pull/736
+        $posts = DB::table('canvas_posts')
+            ->select('canvas_posts.id',
+                'canvas_posts.slug',
+                'summary',
+                'title',
+                'body',
+                'published_at',
+                'featured_image',
+                'featured_image_caption',
+                'canvas_posts.user_id',
+                'meta',
+                'canvas_posts.created_at',
+                'canvas_posts.updated_at',
+                DB::raw('canvas_tags.name = "pinned" AS pinned')
+            )
+            ->leftJoin('canvas_posts_tags', 'canvas_posts_tags.post_id', '=', 'canvas_posts.id')
+            ->leftJoin('canvas_tags', 'canvas_tags.id', '=', 'canvas_posts_tags.tag_id')
+            ->whereRaw('canvas_tags.name != "hidden"')
+            ->orWhereRaw('canvas_tags.name IS NULL')
+            ->orderByRaw('canvas_tags.name = "pinned" DESC, canvas_posts.published_at DESC')
+            ->get();
+            // ->simplePaginate(6);
+
+        dd($posts);
+
         $data = [
-            'posts'  => Post::published()->whereDoesntHave('tags', function ($query) {
-                return $query->where('name', 'hidden');
-            })->orderByDesc('published_at')->simplePaginate(10),
+            'posts' => $posts,
             // 'topics' => Topic::all(['name', 'slug'])->sortBy('name'),
-            // 'tags'   => Tag::all(['name', 'slug']),
+            // 'tags'   => Tag::all(['name', 'slug']), 
         ];
 
         return view('blog.index')->withData($data);

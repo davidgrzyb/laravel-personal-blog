@@ -20,7 +20,7 @@
                         </h2>
                     </div>
                     <div class="pt-2">
-                        <p class="text-post-date-gray font-rubik text-sm">{{ $post->published_at->format('M d') }} — {{ $post->read_time }}</p>
+                        <p class="text-post-date-gray font-rubik text-sm">{{ Carbon\Carbon::parse($post->published_at)->format('M d') }} — {{ getReadTime($post->body) }}</p>
                     </div>
                     <div class="pt-4">
                         <p class="text-post-summary-gray font-rubik text-base">
