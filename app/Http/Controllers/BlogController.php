@@ -98,7 +98,9 @@ class BlogController extends Controller
                 'topics' => Topic::all(['name', 'slug'])->sortBy('name'),
             ];
 
-            event(new PostViewed($post));
+            if (! auth()->check()) {
+                event(new PostViewed($post));
+            }
 
             return view('blog.show')->withData($data);
         } else {
