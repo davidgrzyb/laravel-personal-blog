@@ -1,6 +1,6 @@
 @extends('blog.layouts.app')
 
-@section('title', $data['post']->title)
+@section('title', $data['post']->meta['title'])
 
 @push('meta')
     <meta name="description" content="{{ $data['meta']['description'] }}">
