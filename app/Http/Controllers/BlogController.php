@@ -44,8 +44,8 @@ class BlogController extends Controller
 
         $data = [
             'posts' => $posts,
-            // 'topics' => Topic::all(['name', 'slug'])->sortBy('name'),
-            // 'tags'   => Tag::all(['name', 'slug']), 
+            'topics' => $this->getTopics(),
+            'slug'   => '',
         ];
 
         return view('blog.index')->withData($data);
@@ -95,7 +95,8 @@ class BlogController extends Controller
                 'next'   => $next,
                 'random' => $random,
                 'topic'  => $post->topic->first() ?? null,
-                'topics' => Topic::all(['name', 'slug'])->sortBy('name'),
+                'topics' => $this->getTopics(),
+                'slug'   => '',
             ];
 
             if (! auth()->check()) {
@@ -142,21 +143,25 @@ class BlogController extends Controller
     {
         if (Topic::where('slug', $slug)->first()) {
             $data = [
-                'tags'   => Tag::all(['name', 'slug']),
-                'topics' => Topic::all(['name', 'slug'])->sortBy('name'),
-                'topic'  => Topic::with('posts')->where('slug', $slug)->first(),
+                'slug'   => $slug,
+                'topics' => $this->getTopics(),
                 'posts'  => Post::query()
                     ->whereHas('topic', function ($query) use ($slug) {
                         $query->where('slug', $slug);
                     })
                     ->published()
                     ->orderByDesc('published_at')
-                    ->simplePaginate(10),
+                    ->simplePaginate(6),
             ];
 
             return view('blog.index')->withData($data);
         } else {
             abort(404);
         }
+    }
+
+    private function getTopics()
+    {
+        return Topic::select('name', 'slug')->whereHas('posts')->get()->sortBy('name');
     }
 }

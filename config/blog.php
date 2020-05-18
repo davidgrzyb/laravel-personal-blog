@@ -2,9 +2,11 @@
 
 return [
     'taglines' => [
-        'header' => 'Laravel Developer in Ontario, Canada 🇨🇦',
-        'footer' => 'I\'m a Backend Developer currently living in Ontario, Canada.',
+        'header' => env('HEADER_TAGLINE', ''),
+        'footer' => env('FOOTER_TAGLINE', ''),
     ],
+
+    'topics_enabled' => env('TOPICS_ENABLED', true),
 
     'meta' => [
         'title' => 'David Grzyb — Web Development Personal Blog',
