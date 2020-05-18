@@ -18,14 +18,14 @@
 
 @section('content')
         <div class="flex justify-center">
-            <div class="md:w-3/5">
+            <div class="w-full md:w-3/5">
                 @include('blog.partials.navbar')
             </div>
         </div>
 
         <main role="main" class="flex justify-center pl-8 pr-8">
-            <div class="w-full md:w-3/5 border-gray border-t pb-8">
-                <h1 class="text-post-title-link-gray font-rubik text-3xl font-medium pt-12 pb-2">
+            <div class="w-full md:w-3/5 pb-8">
+                <h1 class="text-post-title-link-gray font-rubik text-3xl font-medium pt-10 pb-2">
                     {{ $data['post']->title }}
                 </h1>
                 <span class="text-sub-header-gray font-rubik text-base">

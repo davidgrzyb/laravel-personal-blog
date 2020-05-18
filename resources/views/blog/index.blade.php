@@ -5,15 +5,15 @@
 
 @section('content')
     <div class="flex justify-center">
-        <div class="md:w-3/5 content-center">
+        <div class="w-full md:w-3/5 content-center">
             @include('blog.partials.navbar')
         </div>
     </div>
 
     <main role="main" class="flex flex-col items-center pl-8 pr-8">
-        <div class="md:w-3/5 border-gray border-t pb-8">
+        <div class="md:w-3/5 pb-8">
             @foreach($data['posts'] as $post)
-                <div class="pt-12">
+                <div class="pt-10">
                     <div>
                         <h2 class="text-post-title-link-gray font-rubik text-2xl md:text-3xl">
                             <a href="{{ route('blog.post', $post->slug) }}" class="">{{ $post->title }}</a>
