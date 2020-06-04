@@ -4,46 +4,43 @@
 @section('description', config('blog.meta.description'))
 
 @section('content')
-    <div class="flex justify-center">
-        <div class="w-full md:w-3/5 content-center">
-            @include('blog.partials.navbar')
-        </div>
+    @include('blog.partials.header')
+
+    <div class="w-full mt-2 mb-10">
+        <main class="container mx-auto">
+            <div class="flex flex-col md:flex-row px-3 md:px-0">
+                <!-- Latest Posts Section -->
+                <section class="w-full md:w-2/3 mr-4">
+
+                    @foreach($data['posts'] as $post)
+                        <article class="w-full py-2 bg-white py-4 px-8 my-8 shadow-md">
+                            <!-- Timestamp & Category -->
+                            <div class="flex items-center justify-between pt-4 pb-6 text-gray-700 border-b">
+                                <span>{{ Carbon\Carbon::parse($post->published_at)->format('M d') }} @if($post->pinned) - Pinned @endif</span>
+                                <span class="text-gray-700">
+                                    {{ getReadTime($post->body) }}
+                                </span>
+                            </div>
+                            <!-- Title & Excerpt -->
+                            <div class="flex flex-col items-center py-6">
+                                <a href="{{ route('blog.post', $post->slug) }}" class="font-bold text-2xl hover:underline">{{ $post->title }}</a>
+                                <a href="{{ route('blog.post', $post->slug) }}" class="text-lg pt-4">{{ $post->summary }}</a>
+                            </div>
+                            <!-- Read More Button & Reaction Count -->
+                            <!-- <div class="flex items-center justify-between py-4 text-gray-700">
+                                <a href="{{ route('blog.post', $post->slug) }}" class="rounded-full outline py-2 px-3 hover:bg-black hover:text-white border border-gray-700 hover:border-transparent transition duration-100 ease-in">Read More</a>
+                                <button class="text-lg hover:text-red-600"><i class="far fa-heart"></i> 187</button>
+                            </div> -->
+                        </article>
+                    @endforeach
+
+                    {{ $data['posts']->links('vendor.pagination.default') }}
+                </section>
+                
+                @include('blog.partials.sidebar')
+            </div>
+        </main>
     </div>
 
-    <main role="main" class="flex flex-col items-center pl-8 pr-8">
-        <div class="md:w-3/5 pb-8">
-            @foreach($data['posts'] as $post)
-                <div class="pt-10">
-                    <div>
-                        <h2 class="text-post-title-link-gray font-rubik text-2xl md:text-3xl">
-                            <a href="{{ route('blog.post', $post->slug) }}" class="">{{ $post->title }}</a>
-                        </h2>
-                    </div>
-                    <div class="pt-2">
-                        <p class="text-post-date-gray font-rubik text-sm">
-                            {{ Carbon\Carbon::parse($post->published_at)->format('M d') }} — {{ getReadTime($post->body) }}
-                            @if($post->pinned)
-                                | Pinned
-                            @endif
-                        </p>
-                    </div>
-                    <div class="pt-4">
-                        <p class="text-post-summary-gray font-rubik text-base">
-                            <a href="{{ route('blog.post', $post->slug) }}" class="">{{ $post->summary }}</a> 
-                        </p>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-
-        <div class="md:w-3/5 pb-8">
-            {{ $data['posts']->links('vendor.pagination.default') }}
-        </div>
-    </main>
-
-    <div class="flex justify-center pl-10 pr-10">
-        <div class="md:w-3/5 border-gray border-t pt-6 pb-4">
-            @include('blog.partials.footer')
-        </div>
-    </div>
+    @include('blog.partials.footer')
 @endsection

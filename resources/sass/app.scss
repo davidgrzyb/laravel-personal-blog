@@ -8,29 +8,37 @@
 // Custom Styles
 
 /* purgecss start ignore */
-body > div > main > div > div > p {
+body > div.w-full.mt-4.bg-white > main > div.text-post-content-gray.font-rubik.text-base.leading-loose.pt-6 {
+    @apply pt-0;
+}
+
+body > div > main > div > p {
     @apply py-4;
 }
 
-body > div > main > div > div > h2 {
+body > div > main > div > h2 {
     @apply text-3xl;
     @apply py-3;
     font-family: inherit;
     color: #4c566a;
 }
 
-body > div > main > div > div > h3 {
+body > div > main > div > h3 {
     @apply text-2xl;
     @apply py-3;
     font-family: inherit;
     color: #4c566a;
 }
 
-body > div > main > div > div > div.ql-embed-content {
+body > div.w-full.mt-4.bg-white > main > img {
+    @apply py-2;
+}
+
+body > div > main > div > div.ql-embed-content {
     @apply my-6;
 }
 
-body > div > main > div > div > pre {
+body > div > main > div > pre {
     @apply my-3;
     @apply overflow-x-auto;
     @apply p-2;
@@ -39,33 +47,32 @@ body > div > main > div > div > pre {
     @apply shadow;
 }
 
-body > div > main > div > div > p > a {
+body > div > main > div > p > a {
     @apply underline;
     color: rgb(3, 102, 214);
 }
 
-body > div > main > div > div > p > strong {
+body > div > main > div > p > strong {
     @apply font-medium;
 }
 
-body > div > main > div > div > blockquote {
+body > div > main > div > blockquote {
     @apply border-l-4;
-    @apply pl-4;
-    @apply py-1;
-    @apply my-3;
+    @apply pl-4;;
+    @apply my-6;
 }
 
-body > div > main > div > div > div.embedded_image > img {
+body > div > main > div > div.embedded_image > img {
     @apply py-6;
 }
 
-body > div > main > div > div > ul {
+body > div > main > div > ul {
     @apply py-4;
     @apply pl-5;
     @apply list-disc;
 }
 
-body > div > main > div > div > blockquote > a {
+body > div > main > div > blockquote > a {
     @apply underline;
 }
 
@@ -105,26 +112,159 @@ body > div > main > div > div > blockquote > a {
     @apply bg-blue-500;
 }
 
+.calendar {
+    font-family: Helvetica, arial;
+    border: 1px solid #DDDDDD;
+    border-radius: 3px;
+    min-height: 243px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.calendar-graph text.wday,
+.calendar-graph text.month {
+    font-size: 10px;
+    fill: #aaa;
+}
+
+.contrib-legend {
+    text-align: right;
+    padding: 0 14px 10px 0;
+    display: inline-block;
+    float: right;
+}
+
+.contrib-legend .legend {
+    display: inline-block;
+    list-style: none;
+    margin: 0 5px;
+    position: relative;
+    bottom: -1px;
+    padding: 0;
+}
+
+.contrib-legend .legend li {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+}
+
+.text-small {
+    font-size: 12px;
+    color: #767676;
+}
+
+.calendar-graph {
+    padding: 5px 0 0;
+    height: 126px;
+    text-align: center;
+}
+
+.contrib-column {
+    padding: 15px 0;
+    text-align: center;
+    border-left: 1px solid #ddd;
+    border-top: 1px solid #ddd;
+    font-size: 11px;
+}
+
+.contrib-column-first {
+    border-left: 0;
+}
+
+.table-column {
+    display: table-cell;
+    width: 1%;
+    padding-right: 10px;
+    padding-left: 10px;
+    vertical-align: top;
+}
+
+.contrib-number {
+    font-weight: 300;
+    line-height: 1.3em;
+    font-size: 24px;
+    display: block;
+    color: #333;
+}
+
+.calendar img.spinner {
+    width: 70px;
+    margin-top: 50px;
+    min-height: 70px;
+}
+
+.monospace {
+    text-align: center;
+    color: #000;
+    font-family: monospace;
+}
+
+.monospace a {
+    color: #1D75AB;
+    text-decoration: none;
+}
+
+.contrib-footer {
+    font-size: 11px;
+    padding: 0 10px 12px;
+    text-align: left;
+    width: 100%;
+    box-sizing: border-box;
+    height: 26px;
+}
+
+.left.text-muted {
+    float: left;
+    margin-left: 9px;
+    color: #767676;
+}
+.left.text-muted a {
+    color: #4078c0;
+    text-decoration: none;
+}
+.left.text-muted a:hover,
+.monospace a:hover {
+    text-decoration: underline;
+}
+
+h2.f4.text-normal.mb-3 {
+    display: none;
+}
+
+.float-left.text-gray {
+    float: left;
+}
+
 // Fonts
 
 /* rubik-regular - latin */
-@font-face {
-    font-family: 'Rubik';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Rubik'), local('Rubik-Regular'),
-        url('../fonts/rubik-v9-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('../fonts/rubik-v9-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
-    }
+// @font-face {
+//     font-family: 'Rubik';
+//     font-style: normal;
+//     font-weight: 400;
+//     src: local('Rubik'), local('Rubik-Regular'),
+//         url('../fonts/rubik-v9-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+//         url('../fonts/rubik-v9-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+// }
 
 /* rubik-500 - latin */
-@font-face {
-    font-family: 'Rubik';
-    font-style: normal;
-    font-weight: 500;
-    src: local('Rubik Medium'), local('Rubik-Medium'),
-        url('../fonts/rubik-v9-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
-        url('../fonts/rubik-v9-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+// @font-face {
+//     font-family: 'Rubik';
+//     font-style: normal;
+//     font-weight: 500;
+//     src: local('Rubik Medium'), local('Rubik-Medium'),
+//         url('../fonts/rubik-v9-latin-500.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+//         url('../fonts/rubik-v9-latin-500.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+// }
+
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,400;0,700;1,400&display=swap');
+.lato { font-family: lato; }
+.container { max-width: 900px; }
+
+/* Hover Menu Button */
+.blog-menu:hover .blog-menu-dropdown {
+    display: flex !important;
 }
 
 /* purgecss end ignore */
