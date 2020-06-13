@@ -18,6 +18,8 @@ Auth::routes(['register' => false]);
 
 Route::get('/', 'BlogController@getPosts')->name('blog.index');
 
+Route::get('about', 'BlogController@getAbout')->name('blog.about');
+
 Route::get('{slug}', 'BlogController@findPostBySlug')->name('blog.post');
 Route::get('topic/{slug}', 'BlogController@getPostsByTopic')->name('blog.topic');
 

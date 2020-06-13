@@ -40,7 +40,7 @@ class BlogController extends Controller
             ->whereRaw('canvas_tags.name != "hidden"')
             ->orWhereRaw('canvas_tags.name IS NULL')
             ->orderByRaw('canvas_tags.name = "pinned" DESC, canvas_posts.published_at DESC')
-            ->simplePaginate(6);
+            ->paginate(6);
 
         $data = [
             'posts' => $posts,
@@ -124,7 +124,7 @@ class BlogController extends Controller
                 'topics' => Topic::all(['name', 'slug'])->sortBy('name'),
                 'posts'  => Post::whereHas('tags', function ($query) use ($slug) {
                     $query->where('slug', $slug);
-                })->published()->orderByDesc('published_at')->simplePaginate(10),
+                })->published()->orderByDesc('published_at')->paginate(10),
             ];
 
             return view('blog.index')->withData($data);
@@ -151,13 +151,19 @@ class BlogController extends Controller
                     })
                     ->published()
                     ->orderByDesc('published_at')
-                    ->simplePaginate(6),
+                    ->paginate(6),
             ];
 
             return view('blog.index')->withData($data);
         } else {
             abort(404);
         }
+    }
+
+    public function getAbout() : View
+    {
+        $data = ['topics' => $this->getTopics()];
+        return view('blog.about')->withData($data);
     }
 
     private function getTopics()
