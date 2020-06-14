@@ -32,7 +32,7 @@ return [
     'about' => [
         'name' => 'David Grzyb',
         'subtitle' => 'Web Developer in Ontario, Canada',
-        'description' => 'My name is David, and I\'m a Web Developer in Hamilton, Ontario. I mostly build with PHP & Laravel, but have been becoming increasingly interested in frontend frameworks and technologies. My latest obessions are Alpine.js and Livewire 😁',
+        'description' => 'My name is David, and I\'m a Web Developer in Hamilton, Ontario. My experience is mostly based around PHP & Laravel, however I\'ve been becoming increasingly interested in frontend frameworks and technologies. My latest obsessions are Alpine.js and Livewire 😁',
         'meta' => [
             'title' => 'David Grzyb — Web Development Personal Blog',
             'description' => 'David Grzyb is a web developer with experience using PHP and JavaScript in Hamilton, Ontario.',
