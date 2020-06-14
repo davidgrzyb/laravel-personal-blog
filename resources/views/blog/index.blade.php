@@ -6,7 +6,7 @@
 @section('content')
     @include('blog.partials.header')
 
-    <div class="w-full mt-2 mb-10">
+    <div class="w-full flex-grow mt-2 mb-10">
         <main class="container mx-auto">
             <div class="flex flex-col md:flex-row px-3 md:px-0">
                 <!-- Latest Posts Section -->

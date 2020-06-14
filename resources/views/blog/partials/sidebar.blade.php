@@ -5,13 +5,13 @@
         <p class="text-gray-500 mb-6">{{ config('blog.taglines.header') }}</p>
         <div class="flex items-center justify-center">
             <a target="_blank" rel="noreferrer" href="https://github.com/davidgrzyb">
-                <img class="w-8 h-8" src="{{ getAsset('storage/github-icon.svg') }}" loading="lazy">
+                <span class="icon-github text-2xl mr-1 text-gray-700 hover:text-black target:text-black"></span>
             </a>
             <a target="_blank" rel="noreferrer" href="https://angel.co/davidgrzyb">
-                <img class="w-8 h-8 ml-2" src="{{ getAsset('storage/angel-icon.svg') }}" loading="lazy">
+                <span class="icon-angellist text-2xl mx-1 text-gray-700 hover:text-black target:text-black"></span>
             </a>
             <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/david-grzyb/">
-                <img class="w-8 h-8 ml-2" src="{{ getAsset('storage/linkedin-icon.svg') }}" loading="lazy">
+                <span class="icon-linkedin text-2xl ml-1 text-gray-700 hover:text-black target:text-black"></span>
             </a>
         </div>
     </div> -->

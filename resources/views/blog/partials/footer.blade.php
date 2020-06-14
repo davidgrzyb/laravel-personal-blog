@@ -3,13 +3,13 @@
         <span class="text-center md:text-left text-gray-600">© {{ now()->year }} {{ config('app.name', __('canvas::blog.title')) }}. {{ config('blog.taglines.header') }}</span>
         <div class="flex mt-6 mb-4 md:my-0">
             <a target="_blank" rel="noreferrer" href="https://github.com/davidgrzyb">
-                <img class="w-6 h-6 opacity-75 hover:opacity-100" src="{{ getAsset('storage/github-icon.svg') }}" loading="lazy">
+                <span class="icon-github text-2xl mr-1 text-gray-700 hover:text-black target:text-black"></span>
             </a>
             <a target="_blank" rel="noreferrer" href="https://angel.co/davidgrzyb">
-                <img class="w-6 h-6 opacity-75 hover:opacity-100 ml-2" src="{{ getAsset('storage/angel-icon.svg') }}" loading="lazy">
+                <span class="icon-angellist text-2xl mx-1 text-gray-700 hover:text-black target:text-black"></span>
             </a>
             <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/david-grzyb/">
-                <img class="w-6 h-6 opacity-75 hover:opacity-100 ml-2" src="{{ getAsset('storage/linkedin-icon.svg') }}" loading="lazy">
+                <span class="icon-linkedin text-2xl ml-1 text-gray-700 hover:text-black target:text-black"></span>
             </a>
         </div>
     </div>
