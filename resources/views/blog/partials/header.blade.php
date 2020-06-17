@@ -1,10 +1,10 @@
-<header class="w-full bg-white shadow-md">
+<header class="w-full bg-white shadow-md z-10">
     <div x-data="{ open: false }" class="container mx-auto">
         <div class="flex justify-between items-center py-5 px-4 md:px-2 border-b">
             <!-- Blog Title -->
             <a class="flex items-center" href="{{ route('blog.index') }}">
-                <img class="w-12 h-12 rounded-full border-2 border-gray-header mr-3" src="{{ getAsset('storage/david-grzyb-animoji.jpg') }}" width="300px" height="300px" loading="lazy">
-                <h1 class="md:hidden text-lg uppercase text-gray-600">{{ config('app.name', __('canvas::blog.title')) }}</h1>
+                <img class="w-12 h-12 md:w-16 md:h-16 rounded-full border-2 border-gray-header mr-3" src="{{ getAsset('storage/david-grzyb-animoji.jpg') }}" width="300px" height="300px" loading="lazy">
+                <h1 class="md:hidden text-md uppercase text-gray-600">{{ config('app.name', __('canvas::blog.title')) }}</h1>
             </a>
             <!-- Call to Action -->
             <div class="md:inline hidden text-gray-600">
@@ -13,18 +13,18 @@
             <!-- Social Icons -->
             <div class="md:flex hidden">
                 <a target="_blank" rel="noreferrer" href="https://github.com/davidgrzyb">
-                    <span class="icon-github text-2xl mr-1 text-gray-700 hover:text-black target:text-black"></span>
+                    <span class="icon-github text-3xl mr-1 text-gray-700 hover:text-black target:text-black"></span>
                 </a>
                 <a target="_blank" rel="noreferrer" href="https://angel.co/davidgrzyb">
-                    <span class="icon-angellist text-2xl mx-1 text-gray-700 hover:text-black target:text-black"></span>
+                    <span class="icon-angellist text-3xl mx-1 text-gray-700 hover:text-black target:text-black"></span>
                 </a>
                 <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/in/david-grzyb/">
-                    <span class="icon-linkedin text-2xl ml-1 text-gray-700 hover:text-black target:text-black"></span>
+                    <span class="icon-linkedin text-3xl ml-1 text-gray-700 hover:text-black target:text-black"></span>
                 </a>
             </div>
             <div class="flex md:hidden">
                 <button @click="open = !open" class="focus:outline-none">
-                    <i class="icon-menu text-2xl text-gray-600 hover:text-black target:text-black"></i>
+                    <i class="icon-menu text-3xl text-gray-600 hover:text-black target:text-black"></i>
                 </button>
             </div>
         </div>

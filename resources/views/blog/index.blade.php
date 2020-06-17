@@ -13,7 +13,7 @@
                 <section class="w-full md:w-2/3 mr-4">
 
                     @foreach($data['posts'] as $post)
-                        <article class="w-full py-2 bg-white py-4 px-8 my-8 shadow-md">
+                        <article class="w-full py-2 bg-white py-4 px-8 my-8 shadow-md border-blue-400 border-l-8">
                             <!-- Timestamp & Category -->
                             <div class="flex items-center justify-between pt-4 pb-6 text-gray-700 border-b">
                                 <span>{{ Carbon\Carbon::parse($post->published_at)->format('M d') }} @if($post->pinned) - Pinned @endif</span>

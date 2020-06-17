@@ -20,8 +20,8 @@
 
     @include('blog.partials.header')
 
-    <div class="w-full mt-4 bg-white">
-        <main class="container mx-auto pb-12 px-6">
+    <div class="w-full mt-8">
+        <main class="container mx-auto bg-white rounded shadow md:pt-4 pb-12 px-6 md:px-10">
             <div class="flex items-center justify-between py-6 border-b">
                 <span class="text-gray-500">{{ \Carbon\Carbon::parse($data['post']->published_at)->format('M d, Y') }}</span>
                 <!-- <span class="py-2 px-3 text-blue-500">Laravel</span> -->

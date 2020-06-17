@@ -16,7 +16,7 @@
         </div>
     </div> -->
     <div class="w-full bg-white my-8 shadow-md">
-        <div class="w-full bg-gray-200 p-4 text-lg text-gray-600">Categories</div>
+        <div class="w-full bg-white p-4 text-lg text-gray-600">Categories</div>
         @foreach($data['topics'] as $topic)
             <a href="{{ route('blog.topic', [$topic->slug]) }}" class="w-full text-gray-600 px-4 py-5 flex items-center justify-between border-t hover:bg-gray-100">
                 <span class="">{{ $topic->name }}</span>
