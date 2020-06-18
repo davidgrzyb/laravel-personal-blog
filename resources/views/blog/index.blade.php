@@ -22,7 +22,7 @@
                                 </span>
                             </div>
                             <!-- Title & Excerpt -->
-                            <div class="flex flex-col items-center py-6">
+                            <div class="flex flex-col py-6">
                                 <a href="{{ route('blog.post', $post->slug) }}" class="font-bold text-2xl hover:underline">{{ $post->title }}</a>
                                 <a href="{{ route('blog.post', $post->slug) }}" class="text-lg pt-4">{{ $post->summary }}</a>
                             </div>

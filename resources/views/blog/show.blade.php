@@ -26,7 +26,7 @@
                 <span class="text-gray-500">{{ \Carbon\Carbon::parse($data['post']->published_at)->format('M d, Y') }}</span>
                 <!-- <span class="py-2 px-3 text-blue-500">Laravel</span> -->
             </div>
-            <h1 class="text-4xl font-bold my-8">{{ $data['post']->title }}</h1>
+            <h1 class="text-4xl font-bold mt-8 mb-2">{{ $data['post']->title }}</h1>
 
             @isset($data['post']->featured_image)
                 <img src="{{ $data['post']->featured_image }}" class="rounded-lg pt-12"
