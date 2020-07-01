@@ -7,7 +7,7 @@ return [
     ],
 
     'cta' => [
-        'navbar' => '<span class="italic">Hey!</span> I make TailwindCSS templates. <a href="https://rokk.it/github" target="_blank" class="font-bold text-gray-700 hover:underline">Check them out here</a> ⚡️',
+        'navbar' => '<span class="italic">Hey!</span> I make TailwindCSS templates. <a href="/templates" class="font-bold text-gray-700 hover:underline">Check them out here</a> ⚡️',
         'sidebar' => [
             'enabled' => env('SIDEBAR_CTA_ENABLED', false),
             'title' => 'Tailwind Templates',
