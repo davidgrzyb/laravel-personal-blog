@@ -166,6 +166,12 @@ class BlogController extends Controller
         return view('blog.about')->withData($data);
     }
 
+    public function getTemplates() : View
+    {
+        $data = ['topics' => $this->getTopics()];
+        return view('blog.templates')->withData($data);
+    }
+
     private function getTopics()
     {
         return Topic::select('name', 'slug')->whereHas('posts')->get()->sortBy('name');
